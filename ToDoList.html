@@ -1,0 +1,55 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+<h1>To Do List</h1>
+
+
+
+    <input id ="inputField" type = "text">
+    <button id="addToDoButton">+</button>
+
+    <div id="toDoContainer"></div>
+
+
+
+ 
+<script>
+
+var addToDoButton = document.getElementById("addToDoButton");
+var toDoContainer = document.getElementById("toDoContainer");
+var inputField = document.getElementById("inputField");
+
+addToDoButton.addEventListener("click",function() {
+
+var paragraph = document.createElement("p"); // this doesn't add the <p> to the document 
+paragraph.innerText = inputField.value;
+toDoContainer.appendChild(paragraph); // this is where the <p> gets added to the document 
+
+
+paragraph.addEventListener("click", function() {
+paragraph.style.textDecoration = "line-through";
+
+})
+
+paragraph.addEventListener("dblclick", function() {
+toDoContainer.removeChild(paragraph);
+
+})
+
+})
+    
+</script>
+
+
+<!--You always have to createElement and store it as a variable first and then appendChild it
+
+You also have to create a container to which you can add elements -->
+
+
+
+</body>
+</html>
